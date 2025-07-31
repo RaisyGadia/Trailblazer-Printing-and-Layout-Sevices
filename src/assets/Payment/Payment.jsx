@@ -154,6 +154,10 @@ const handleReceiptUpload = (e) => {
     alert("Please accept the terms and conditions to proceed.");
     return;
   }
+  if (userDetails.paymentMethod === "Gcash" && !uploadedReceipt) {
+    alert("Please upload your GCash payment receipt to proceed.");
+    return;
+  }
 
   try {
     const auth = getAuth();
@@ -965,7 +969,7 @@ await setDoc(orderDocRef, {
         <button
           className="pay-btn-filled"
           onClick={handleProceed}
-          disabled={!termsAccepted}
+          disabled={!termsAccepted || (userDetails.paymentMethod === "Gcash" && !uploadedReceipt)}
         >
           Proceed
         </button>

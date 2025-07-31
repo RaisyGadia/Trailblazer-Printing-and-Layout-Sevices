@@ -94,30 +94,6 @@ function Templates() {
     },
   ];
 
-    const layoutTemplates = [
-    {
-      id: "layout1",
-      src: "layout1.png",
-      title: "Basic Layout Design",
-      description: "Simple layout design service",
-      templateType: "layout",
-    },
-    {
-      id: "layout2",
-      src: "layout2.png",
-      title: "Advanced Layout Design",
-      description: "Complex layout design service",
-      templateType: "layout",
-    },
-    {
-      id: "layout3",
-      src: "layout3.png",
-      title: "Custom Layout Design",
-      description: "Fully customized layout design",
-      templateType: "layout",
-    },
-  ];
-
 const renderTemplates = (templates) =>
   templates.map((template, index) => (
     <div
@@ -149,11 +125,6 @@ const renderTemplates = (templates) =>
       <div className="template-section">
         <h2 className="template-heading">POWERPOINT PRESENTATIONS</h2>
         <div className="template-row">{renderTemplates(pptTemplates)}</div>
-      </div>
-
-      <div className="template-section">
-        <h2 className="template-heading">LAYOUT DESIGNS</h2>
-        <div className="template-row">{renderTemplates(layoutTemplates)}</div>
       </div>
 
 
